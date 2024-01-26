@@ -1,0 +1,24 @@
+admin (id, username, password, email, role)
+teacher(id, email, password, name, status, createdBy (forienkey admin(id))
+student(id, email, password, name, status)
+
+
+Admin -
+      register - register admin with (username, password) (public api)
+      login - login admin with (username, password) (public api)
+Teacher -
+      register - add teacher with (email, name, password)
+                (only admin user can register teacher)
+      login - login teacher with (email, password) (public api)
+Student -
+      register - register student with (email, name, password) (public api)
+      login - login student with (email, password) (public api)
+
+Further APIs can be configured for authorized for particular type of user.
+
+CREATE TABLE Persons (
+    ID Integer PRIMARY KEY auto_increment,
+    Name varchar(255) NOT NULL,
+    Email varchar(255),
+    Role varchar(255)
+);
